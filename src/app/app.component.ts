@@ -46,10 +46,12 @@ export class AppComponent {
     console.log()
 
     // ejercicio arena y guerrero
-    const guerrero1 = new Guerrero('invencible', 50);
-    const guerrero2 = new Guerrero('depredador', 50);
+    const guerrero1 = new Guerrero('Invencible', 50);
+    const guerrero2 = new Guerrero('Depredador', 50);
 
     console.log(new Arena().resultadoBatalla(guerrero1, guerrero2));
+    console.log('El nombre del guerrero es ' + guerrero1._nombre);
+    console.log('El nivel de ataque del guerrero es ' + guerrero2._nivelAtaque);
 
 
     // ejercicio cuenta
@@ -65,5 +67,7 @@ export class AppComponent {
 
     console.log('El saldo de la cuenta es ' + cuenta.retirar(2) + ' euros');
     console.log('El saldo de la cuenta es ' + cuenta.retirar(10) + ' euros');
+    console.log('El titural de la cuenta es ' + p);
+    console.log(cuenta2);
   }
 }
