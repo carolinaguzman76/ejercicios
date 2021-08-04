@@ -50,11 +50,6 @@ export class Libro {
     const titulo2 = libro2._titulo;
     let resultado = '';
 
-    console.log(nroPaginas1);
-    console.log(nroPaginas2);
-    console.log(titulo1);
-    console.log(titulo2);
-
     if(nroPaginas1 > nroPaginas2) {
       resultado = 'Tiene mas paginas ' + titulo1;
     } if(nroPaginas1 < nroPaginas2) {

@@ -6,6 +6,7 @@ import {Arena} from "./ejercicios/arena";
 import {Persona} from "./ejercicios/persona";
 import {Rombo} from "./ejercicios/rombo";
 import {Libro} from "./ejercicios/libro";
+import {PersonaImc} from "./ejercicios/personaImc";
 
 @Component({
   selector: 'app-root',
@@ -84,6 +85,13 @@ export class AppComponent {
     console.log(libro1);
     console.log(libro2);
     console.log(libro1.mayorNumeroPaginas(libro1, libro2));
+
+    // ejercicio persona2
+    const personaImc1 = new PersonaImc('Mara', 26, 29452991, 'M', 63, 1.68);
+
+    console.log(personaImc1);
+   // console.log(personaImc1.pesoIdeal(personaImc1));
+
 
   }
 }
