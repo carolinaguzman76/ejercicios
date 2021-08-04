@@ -4,6 +4,7 @@ import {Guerrero} from "./ejercicios/guerrero";
 import {Familia} from "./ejercicios/familia";
 import {Arena} from "./ejercicios/arena";
 import {Persona} from "./ejercicios/persona";
+import {Rombo} from "./ejercicios/rombo";
 
 @Component({
   selector: 'app-root',
@@ -67,7 +68,12 @@ export class AppComponent {
 
     console.log('El saldo de la cuenta es ' + cuenta.retirar(2) + ' euros');
     console.log('El saldo de la cuenta es ' + cuenta.retirar(10) + ' euros');
-    console.log('El titural de la cuenta es ' + p);
+    console.log('El titular de la cuenta es ' + p);
     console.log(cuenta2);
+
+    // ejercicio rombo
+    const rombo1 = new Rombo(50, 20);
+
+    console.log('El area del rombo es ' + rombo1.calculoArea());
   }
 }
