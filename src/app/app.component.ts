@@ -5,6 +5,7 @@ import {Familia} from "./ejercicios/familia";
 import {Arena} from "./ejercicios/arena";
 import {Persona} from "./ejercicios/persona";
 import {Rombo} from "./ejercicios/rombo";
+import {Libro} from "./ejercicios/libro";
 
 @Component({
   selector: 'app-root',
@@ -75,5 +76,14 @@ export class AppComponent {
     const rombo1 = new Rombo(50, 20);
 
     console.log('El area del rombo es ' + rombo1.calculoArea());
+
+    // ejercicio libro
+    const libro1 = new Libro(52, 'El desencuentro', 'Fernando Schwartz', 180);
+    const libro2 = new Libro(63, 'La torre oscura', 'Stephen King', 218);
+
+    console.log(libro1);
+    console.log(libro2);
+    console.log(libro1.mayorNumeroPaginas(libro1, libro2));
+
   }
 }
