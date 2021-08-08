@@ -1,3 +1,15 @@
+// Crear la clase Rombo, la cual debe tener dos propiedades:
+// DiagonalVertical y DiagonalHorizontal.
+//
+// Sus accessos serán por "get" y "set"
+//
+// Le añadiremos un constructor al que le pasaremos los valores anteriores cuando instanciemos el objeto.
+//
+//
+// Y también debe de tener un método que calcule el area, que será la multiplicación de DiagonalVertical * DiagonalHorizontal.
+// Este método devolverá un número.
+
+
 export class Rombo {
 
   private _diagonalVertical: number;
@@ -25,7 +37,7 @@ export class Rombo {
   }
 
   calculoArea(): number {
-    return this._diagonalVertical * this._diagonalHorizontal;
+    return this.diagonalVertical * this.diagonalHorizontal;
   }
 
 }

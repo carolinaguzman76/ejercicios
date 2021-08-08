@@ -53,8 +53,8 @@ export class AppComponent {
     const guerrero2 = new Guerrero('Depredador', 50);
 
     console.log(new Arena().resultadoBatalla(guerrero1, guerrero2));
-    console.log('El nombre del guerrero es ' + guerrero1._nombre);
-    console.log('El nivel de ataque del guerrero es ' + guerrero2._nivelAtaque);
+    console.log('El nombre del guerrero es ' + guerrero1.nombre);
+    console.log('El nivel de ataque del guerrero es ' + guerrero2.nivelAtaque);
 
 
     // ejercicio cuenta
@@ -86,12 +86,14 @@ export class AppComponent {
     console.log(libro2);
     console.log(libro1.mayorNumeroPaginas(libro1, libro2));
 
-    // ejercicio persona2
-    const personaImc1 = new PersonaImc('Mara', 26, 29452991, 'M', 63, 1.68);
+    // ejercicio personaImc
+    const personaImc1 = new PersonaImc('Mara', 26, 29452991, '5', 63, 1.68);
 
-    console.log(personaImc1);
-   // console.log(personaImc1.pesoIdeal(personaImc1));
-
-
+    console.log('El imc de ' + personaImc1.nombre + ' es ' + personaImc1.calcularIMC())
+    console.log('Valor peso ideal ' + personaImc1.pesoIdeal());
+    console.log(personaImc1.valorImc());
+    console.log('Es mayor de edad: ' + personaImc1.mayorDeEdad());
+    console.log('Ha introducido un genero correcto? ' + personaImc1.comprobarGenero());
+    console.log(personaImc1.toStringPersona());
   }
 }
