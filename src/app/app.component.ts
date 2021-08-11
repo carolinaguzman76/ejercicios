@@ -7,6 +7,7 @@ import {Persona} from "./ejercicios/persona";
 import {Rombo} from "./ejercicios/rombo";
 import {Libro} from "./ejercicios/libro";
 import {PersonaImc} from "./ejercicios/personaImc";
+import {CuentaJoven} from "./ejercicios/cuentaJoven";
 
 @Component({
   selector: 'app-root',
@@ -87,7 +88,7 @@ export class AppComponent {
     console.log(libro1.mayorNumeroPaginas(libro1, libro2));
 
     // ejercicio personaImc
-    const personaImc1 = new PersonaImc('Mara', 26, 29452991, '5', 63, 1.68);
+    const personaImc1 = new PersonaImc('Mara', 26, 29452991, 'M', 63, 1.68);
 
     console.log('El imc de ' + personaImc1.nombre + ' es ' + personaImc1.calcularIMC())
     console.log('Valor peso ideal ' + personaImc1.pesoIdeal());
@@ -95,5 +96,23 @@ export class AppComponent {
     console.log('Es mayor de edad: ' + personaImc1.mayorDeEdad());
     console.log('Ha introducido un genero correcto? ' + personaImc1.comprobarGenero());
     console.log(personaImc1.toStringPersona());
+
+    // ejercicio cuenta joven
+    const cuentaJoven1 = new CuentaJoven('Ana', 21, 44895362, 80);
+    const cuentaJoven2 = new CuentaJoven('Luis', 15, 26354891, 30);
+    const cuentaJoven3 = new CuentaJoven('Sonia', 31, 25369745, 120);
+
+    console.log(cuentaJoven1.esTitularValido());
+    console.log(cuentaJoven2.esTitularValido());
+    console.log(cuentaJoven3.esTitularValido());
+    console.log(cuentaJoven1.retirar(90));
+    console.log(cuentaJoven1.retirar(45));
+    console.log(cuentaJoven2.retirar(10));
+    console.log(cuentaJoven3.retirar(135));
+    console.log(cuentaJoven1.mostrar(5));
+    console.log(cuentaJoven2.ingresarHasta3000(1500));
+    console.log(cuentaJoven2.ingresarHasta3000(3800));
+    console.log(cuentaJoven3.ingresarSaldoMaximo(4100));
+    console.log(cuentaJoven3.ingresarSaldoMaximo(2000));
   }
 }

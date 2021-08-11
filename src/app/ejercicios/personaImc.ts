@@ -93,7 +93,7 @@ export class PersonaImc {
   comprobarGenero(): boolean {
     const sexo = this.sexo;
 
-    if (sexo == 'M' || 'H') {
+    if (sexo == 'M' || sexo === 'H') {
       return true;
     } else {
       return false;
@@ -103,7 +103,7 @@ export class PersonaImc {
   toStringPersona() {
     const datos = this;
 
-    return datos;
+    return 'El nombre es ' + datos.nombre + ', su edad es ' + datos.edad + ' años' + '. El sexo es ' + datos.sexo + '. Su peso y altura son: ' + datos.peso + ' y ' + datos.altura + '. El DNI es ' + datos.DNI;
   }
 }
 
