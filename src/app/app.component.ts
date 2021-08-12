@@ -109,10 +109,9 @@ export class AppComponent {
     console.log(cuentaJoven1.retirar(45));
     console.log(cuentaJoven2.retirar(10));
     console.log(cuentaJoven3.retirar(135));
-    console.log(cuentaJoven1.mostrar(5));
-    console.log(cuentaJoven2.ingresarHasta3000(1500));
-    console.log(cuentaJoven2.ingresarHasta3000(3800));
-    console.log(cuentaJoven3.ingresarSaldoMaximo(4100));
-    console.log(cuentaJoven3.ingresarSaldoMaximo(2000));
+    console.log(cuentaJoven1.mostrar());
+    console.log(cuentaJoven2.ingresar(1500));
+    console.log(cuentaJoven2.ingresar(3800));
+
   }
 }

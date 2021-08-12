@@ -99,29 +99,20 @@ export class CuentaJoven {
     }
   }
 
-  mostrar(bonificacion: number): string {
-    return 'Cuenta joven. Tu bonificacion es: ' + bonificacion + '%';
+  mostrar(): string {
+    const dinero = this.dinero;
+
+    return 'Cuenta joven. El saldo actual es: ' + dinero + ' euros';
   }
 
-  ingresarHasta3000(cantidadIngresada: number) {
+  ingresar(cantidadIngresada: number) {
     let dinero = this.dinero;
 
     if (cantidadIngresada >= 3000) {
       return 'Excedido el importe maximo a ingresar';
     } else {
-      return 'Nuevo saldo en cuenta '+ (dinero + cantidadIngresada) + ' euros' ;
+      return 'Nuevo saldo en cuenta ' + (dinero + cantidadIngresada) + ' euros';
     }
   }
 
-  ingresarSaldoMaximo(cantidadIngresada: number) {
-    let dinero = this.dinero;
-    let resultadoIngreso = dinero + cantidadIngresada;
-
-    if(resultadoIngreso > 3000) {
-      return 'No se puede realizar el ingreso. Excedido el limite de la cuenta.';
-    } else {
-      dinero = resultadoIngreso;
-      return 'Nuevo saldo en cuenta ' + dinero + ' euros';
-    }
-  }
 }
