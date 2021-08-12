@@ -80,23 +80,19 @@ export class CuentaJoven {
     }
   }
 
-  retirar(cantidadRetirada: number): string {
+  retirar(cantidadRetirada: number): number {
     const titularValido = this.esTitularValido();
     let dinero = this.dinero;
 
-    if (titularValido && cantidadRetirada >= dinero) {
-      dinero = 0;
-
-      return 'El dinero disponible en cuenta es ' + dinero + ' euros';
-
+    if (titularValido) {
+      if (cantidadRetirada >= dinero) {
+        dinero = 0;
+      }
+      if (cantidadRetirada < dinero) {
+        dinero = dinero - cantidadRetirada;
+      }
     }
-    if (titularValido && cantidadRetirada < dinero) {
-      dinero = dinero - cantidadRetirada;
-
-      return 'El dinero disponible en cuenta es ' + dinero + ' euros';
-    } else {
-      return 'El titular no es valido';
-    }
+    return dinero;
   }
 
   mostrar(): string {
@@ -108,11 +104,10 @@ export class CuentaJoven {
   ingresar(cantidadIngresada: number) {
     let dinero = this.dinero;
 
-    if (cantidadIngresada >= 3000) {
-      return 'Excedido el importe maximo a ingresar';
-    } else {
-      return 'Nuevo saldo en cuenta ' + (dinero + cantidadIngresada) + ' euros';
+    if (cantidadIngresada < 3000) {
+      dinero = dinero + cantidadIngresada;
     }
+    return dinero;
   }
 
 }

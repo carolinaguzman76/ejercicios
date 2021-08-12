@@ -110,8 +110,12 @@ export class AppComponent {
     console.log(cuentaJoven2.retirar(10));
     console.log(cuentaJoven3.retirar(135));
     console.log(cuentaJoven1.mostrar());
+    console.log(cuentaJoven2.mostrar());
     console.log(cuentaJoven2.ingresar(1500));
-    console.log(cuentaJoven2.ingresar(3800));
+    console.log(cuentaJoven2.mostrar());
+    console.log(cuentaJoven3.mostrar());
+    console.log(cuentaJoven3.ingresar(3800));
+    console.log(cuentaJoven3.mostrar());
 
   }
 }
