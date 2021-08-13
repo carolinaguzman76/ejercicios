@@ -12,7 +12,8 @@
 // Un constructor con todos los parámetros.
 // Los setters y getters.
 // esTitularValido()  ->que devuelve 'true' si el titular es mayor de edad pero menor de 25 años y 'false' en caso contrario.
-// retirar(cantidad): number  -> solo puede retirar dinero si el titular es válido (usando la función anterior) en caso de que se intente retirar más dinero que el disponible, se devuelve el resto.
+// retirar(cantidad): number  -> solo puede retirar dinero si el titular es válido (usando la función anterior) en caso de que se intente retirar
+// más dinero que el disponible, se devuelve el resto.
 // Además debemos dejar la cantidad de dinero actualizada.
 //
 // Ejemplo:
@@ -82,17 +83,16 @@ export class CuentaJoven {
 
   retirar(cantidadRetirada: number): number {
     const titularValido = this.esTitularValido();
-    let dinero = this.dinero;
 
     if (titularValido) {
-      if (cantidadRetirada >= dinero) {
-        dinero = 0;
+      if (cantidadRetirada >= this.dinero) {
+        this.dinero = 0;
       }
-      if (cantidadRetirada < dinero) {
-        dinero = dinero - cantidadRetirada;
+      if (cantidadRetirada < this.dinero) {
+        this.dinero = this.dinero - cantidadRetirada;
       }
     }
-    return dinero;
+    return this.dinero;
   }
 
   mostrar(): string {

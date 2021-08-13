@@ -8,6 +8,7 @@ import {Rombo} from "./ejercicios/rombo";
 import {Libro} from "./ejercicios/libro";
 import {PersonaImc} from "./ejercicios/personaImc";
 import {CuentaJoven} from "./ejercicios/cuentaJoven";
+import {PersonaConCuentaJoven} from "./ejercicios/personaConCuentaJoven";
 
 @Component({
   selector: 'app-root',
@@ -105,8 +106,7 @@ export class AppComponent {
     console.log(cuentaJoven1.esTitularValido());
     console.log(cuentaJoven2.esTitularValido());
     console.log(cuentaJoven3.esTitularValido());
-    console.log(cuentaJoven1.retirar(90));
-    console.log(cuentaJoven1.retirar(45));
+    console.log(cuentaJoven1.retirar(20));
     console.log(cuentaJoven2.retirar(10));
     console.log(cuentaJoven3.retirar(135));
     console.log(cuentaJoven1.mostrar());
@@ -117,5 +117,14 @@ export class AppComponent {
     console.log(cuentaJoven3.ingresar(3800));
     console.log(cuentaJoven3.mostrar());
 
+    // ejercicio persona con cuenta joven
+
+    const cuentaJoven4 = new CuentaJoven('Ana', 22, 58963124, 100);
+    const cuentaJoven5 = new CuentaJoven('Luis', 41, 58963124, 100);
+    const personaConCuentaJoven1 = new PersonaConCuentaJoven('Ana', 25, cuentaJoven4);
+    const personaConCuentaJoven2 = new PersonaConCuentaJoven('Luis', 41, cuentaJoven5);
+
+    console.log(personaConCuentaJoven1.titularValidoMostrarRetirar(50));
+    console.log(personaConCuentaJoven2.titularValidoMostrarRetirar(500));
   }
 }
