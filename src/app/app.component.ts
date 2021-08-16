@@ -9,6 +9,7 @@ import {Libro} from "./ejercicios/libro";
 import {PersonaImc} from "./ejercicios/personaImc";
 import {CuentaJoven} from "./ejercicios/cuentaJoven";
 import {PersonaConCuentaJoven} from "./ejercicios/personaConCuentaJoven";
+import {PreguntaDeTest} from "./ejercicios/preguntaDeTest";
 
 @Component({
   selector: 'app-root',
@@ -126,5 +127,14 @@ export class AppComponent {
 
     console.log(personaConCuentaJoven1.titularValidoMostrarRetirar(50));
     console.log(personaConCuentaJoven2.titularValidoMostrarRetirar(500));
+
+    // ejercicio pregunta de test
+
+    const preguntaDeTest1 = new PreguntaDeTest('Liquido que necesita todo ser vivo para sobrevivir?',
+      'cerveza', 'agua', 'vino', 'barro', 'opcion 2');
+
+    console.log(preguntaDeTest1.responder('opcion 2'));
+    console.log(preguntaDeTest1.responder('agua'));
+    console.log(preguntaDeTest1.mostrarPorConsola());
   }
 }
