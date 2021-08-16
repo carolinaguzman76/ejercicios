@@ -102,12 +102,11 @@ export class CuentaJoven {
   }
 
   ingresar(cantidadIngresada: number) {
-    let dinero = this.dinero;
 
     if (cantidadIngresada < 3000) {
-      dinero = dinero + cantidadIngresada;
+     this.dinero = this.dinero + cantidadIngresada;
     }
-    return dinero;
+    return this.dinero;
   }
 
 }
