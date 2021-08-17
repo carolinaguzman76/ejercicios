@@ -160,8 +160,8 @@ export class AppComponent {
     console.log(testExamenFinal1.responderExamen('opcion 2', 'opcion 3', 'opcion 3',
       'opcion 1', 'opcion 4', 'opcion 2' ));
     console.log(testExamenFinal1.responderExamen('opcion 1', 'opcion 1', 'opcion 3',
-      'opcion 1', 'opcion 5', 'opcion 5' ));
+      'opcion 2', 'opcion 5', 'opcion 2' ));
     console.log(testExamenFinal1.responderExamen('opcion 1', 'opcion 2', 'opcion 3',
-      'opcion 3', 'opcion 1', 'opcion 3' ));
+      'opcion 3', 'opcion 2', 'opcion 2' ));
   }
 }

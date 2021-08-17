@@ -104,17 +104,17 @@ export class TestExamenFinal {
                   respuesta6: string) {
     let respuestasCorrectas = 0;
 
-    if(respuesta1 == this.pregunta1.respuesta) {
+    if(this.pregunta1.responder(respuesta1)) {
       respuestasCorrectas = respuestasCorrectas + 1;
-    } if(respuesta2 == this.pregunta2.respuesta) {
+    } if(this.pregunta2.responder(respuesta2)) {
       respuestasCorrectas = respuestasCorrectas + 1;
-    } if(respuesta3 == this.pregunta3.respuesta) {
+    } if(this.pregunta3.responder(respuesta3)) {
       respuestasCorrectas = respuestasCorrectas + 1;
-    } if(respuesta4 == this.pregunta4.respuesta) {
+    } if(this.pregunta4.responder(respuesta4)) {
       respuestasCorrectas = respuestasCorrectas + 1;
-    } if(respuesta5 == this.pregunta5.respuesta) {
+    } if(this.pregunta5.responder(respuesta5)) {
       respuestasCorrectas = respuestasCorrectas + 1;
-    } if(respuesta6 == this.pregunta6.respuesta) {
+    } if(this.pregunta6.responder(respuesta6)) {
       respuestasCorrectas = respuestasCorrectas + 1;
     }
 
