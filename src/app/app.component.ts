@@ -152,14 +152,6 @@ export class AppComponent {
       'onix', 'lapislazu', 'opcion 2');
     const testExamenFinal1 = new TestExamenFinal(preguntaDeTest1, preguntaDeTest2, preguntaDeTest3, preguntaDeTest4, preguntaDeTest5, preguntaDeTest6);
 
-    // console.log(testExamenFinal1);
-    // console.log(testExamenFinal1.mostrarExamen());
-    // console.log(testExamenFinal1.mostrarExamen2());
-    // console.log('prueba for');
-    // console.log(testExamenFinal1.mostrarObjeto());
-    // console.log(testExamenFinal1.mostrarTodo());
-
-    console.log('probando funciones normales');
     console.log(testExamenFinal1.mostrarExamen());
     console.log(testExamenFinal1.responderExamen('opcion 2', 'opcion 1', 'opcion 3',
       'opcion 1', 'opcion 1', 'opcion 2' ));
