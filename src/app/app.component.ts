@@ -10,6 +10,7 @@ import {PersonaImc} from "./ejercicios/personaImc";
 import {CuentaJoven} from "./ejercicios/cuentaJoven";
 import {PersonaConCuentaJoven} from "./ejercicios/personaConCuentaJoven";
 import {PreguntaDeTest} from "./ejercicios/preguntaDeTest";
+import {TestExamenFinal} from "./ejercicios/testExamenFinal";
 
 @Component({
   selector: 'app-root',
@@ -136,5 +137,39 @@ export class AppComponent {
     console.log(preguntaDeTest1.responder('opcion 2'));
     console.log(preguntaDeTest1.responder('agua'));
     console.log(preguntaDeTest1.mostrarPorConsola());
+
+    // ejercicio test examen final
+
+    const preguntaDeTest2 = new PreguntaDeTest('Quien dominara el mundo?', 'gato', 'perro',
+      'oveja', 'cucaracha', 'opcion 1');
+    const preguntaDeTest3 = new PreguntaDeTest('Sin que no se puede vivir?', 'vacaciones',
+      'cerveza', 'aire', 'dinero', 'opcion 3');
+    const preguntaDeTest4 = new PreguntaDeTest('Como se llama el puto gato?', 'gallifrey',
+      'michi', 'arnoldo', 'minino', 'opcion 1');
+    const preguntaDeTest5 = new PreguntaDeTest('Que genero de peliculas no te deja dormir por las noches?',
+      'terror', 'ciencia ficción', 'comedia', 'thriller', 'opcion 1');
+    const preguntaDeTest6 = new PreguntaDeTest('Cual tiene mayor dureza?', 'carbon', 'diamante',
+      'onix', 'lapislazu', 'opcion 2');
+    const testExamenFinal1 = new TestExamenFinal(preguntaDeTest1, preguntaDeTest2, preguntaDeTest3, preguntaDeTest4, preguntaDeTest5, preguntaDeTest6);
+
+    // console.log(testExamenFinal1);
+    // console.log(testExamenFinal1.mostrarExamen());
+    // console.log(testExamenFinal1.mostrarExamen2());
+    // console.log('prueba for');
+    // console.log(testExamenFinal1.mostrarObjeto());
+    // console.log(testExamenFinal1.mostrarTodo());
+
+    console.log('probando funciones normales');
+    console.log(testExamenFinal1.mostrarExamen());
+    console.log(testExamenFinal1.responderExamen('opcion 2', 'opcion 1', 'opcion 3',
+      'opcion 1', 'opcion 1', 'opcion 2' ));
+    console.log(testExamenFinal1.responderExamen('opcion 2', 'opcion 1', 'opcion 3',
+      'opcion 1', 'opcion 2', 'opcion 2' ));
+    console.log(testExamenFinal1.responderExamen('opcion 2', 'opcion 3', 'opcion 3',
+      'opcion 1', 'opcion 4', 'opcion 2' ));
+    console.log(testExamenFinal1.responderExamen('opcion 1', 'opcion 1', 'opcion 3',
+      'opcion 1', 'opcion 5', 'opcion 5' ));
+    console.log(testExamenFinal1.responderExamen('opcion 1', 'opcion 2', 'opcion 3',
+      'opcion 3', 'opcion 1', 'opcion 3' ));
   }
 }

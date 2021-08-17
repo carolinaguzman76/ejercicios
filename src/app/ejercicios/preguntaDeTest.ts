@@ -1,4 +1,4 @@
-// Vamos a Crear la Clase "PreguntadeTest"
+// Vamos a Crear la Clase "PreguntaDeTest"
 //
 // Con los siguientes Atributos:
 //
