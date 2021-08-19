@@ -11,6 +11,7 @@ import {CuentaJoven} from "./ejercicios/cuentaJoven";
 import {PersonaConCuentaJoven} from "./ejercicios/personaConCuentaJoven";
 import {PreguntaDeTest} from "./ejercicios/preguntaDeTest";
 import {TestExamenFinal} from "./ejercicios/testExamenFinal";
+import {ListaCompra} from "./ejercicios/listaCompra";
 
 @Component({
   selector: 'app-root',
@@ -150,18 +151,38 @@ export class AppComponent {
       'terror', 'ciencia ficción', 'comedia', 'thriller', 'opcion 1');
     const preguntaDeTest6 = new PreguntaDeTest('Cual tiene mayor dureza?', 'carbon', 'diamante',
       'onix', 'lapislazu', 'opcion 2');
-    const testExamenFinal1 = new TestExamenFinal(preguntaDeTest1, preguntaDeTest2, preguntaDeTest3, preguntaDeTest4, preguntaDeTest5, preguntaDeTest6);
+    const testExamenFinal1 = new TestExamenFinal(preguntaDeTest1, preguntaDeTest2, preguntaDeTest3, preguntaDeTest4,
+      preguntaDeTest5, preguntaDeTest6);
 
     console.log(testExamenFinal1.mostrarExamen());
     console.log(testExamenFinal1.responderExamen('opcion 2', 'opcion 1', 'opcion 3',
-      'opcion 1', 'opcion 1', 'opcion 2' ));
+      'opcion 1', 'opcion 1', 'opcion 2'));
     console.log(testExamenFinal1.responderExamen('opcion 2', 'opcion 1', 'opcion 3',
-      'opcion 1', 'opcion 2', 'opcion 2' ));
+      'opcion 1', 'opcion 2', 'opcion 2'));
     console.log(testExamenFinal1.responderExamen('opcion 2', 'opcion 3', 'opcion 3',
-      'opcion 1', 'opcion 4', 'opcion 2' ));
+      'opcion 1', 'opcion 4', 'opcion 2'));
     console.log(testExamenFinal1.responderExamen('opcion 1', 'opcion 1', 'opcion 3',
-      'opcion 2', 'opcion 5', 'opcion 2' ));
+      'opcion 2', 'opcion 5', 'opcion 2'));
     console.log(testExamenFinal1.responderExamen('opcion 1', 'opcion 2', 'opcion 3',
-      'opcion 3', 'opcion 2', 'opcion 2' ));
+      'opcion 3', 'opcion 2', 'opcion 2'));
+
+    // ejercicio lista de la compra
+
+    const listaCompra1 = new ListaCompra(['manzanas', 'suavizante', 'tofu']);
+
+    console.log('lista incial');
+    console.log(listaCompra1.mostrarListaSimplemente());
+    console.log('aqui añadimos un item a la lista');
+    listaCompra1.agregarItemAListaDeCompra('tomate frito');
+    listaCompra1.agregarItemAListaDeCompra('leche');
+    console.log('aqui mostramos la lista');
+    console.log(listaCompra1.mostrarListaSimplemente());
+    console.log('lista vacia');
+    console.log(listaCompra1.vaciarListaDeLaCompra());
+
+    console.log('aqui tendrian que salir los componentes de la lista');
+
+    listaCompra1.mostrarLista();
+
   }
 }
