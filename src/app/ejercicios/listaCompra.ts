@@ -40,7 +40,7 @@ export class ListaCompra {
 
   mostrarLista() {
 
-    for (let i = 0; i < this.compra.length - 1; i++) {
+    for (let i = 0; i < this.compra.length ; i++) {
       console.log(this.compra[i]);
     }
   }

@@ -181,7 +181,10 @@ export class AppComponent {
     console.log(listaCompra1.vaciarListaDeLaCompra());
 
     console.log('aqui tendrian que salir los componentes de la lista');
-
+    listaCompra1.agregarItemAListaDeCompra('salsa brava');
+    listaCompra1.agregarItemAListaDeCompra('queso');
+    listaCompra1.agregarItemAListaDeCompra('cafe');
+    console.log(listaCompra1.mostrarListaSimplemente());
     listaCompra1.mostrarLista();
 
   }
