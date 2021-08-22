@@ -207,13 +207,8 @@ export class AppComponent {
     listaCompra3.agregarItemAListaDeCompra(itemSupermercado2);
     listaCompra3.agregarItemAListaDeCompra(itemSupermercado1);
     listaCompra3.mostrarLista();
-    console.log('filter');
-    console.log(listaCompra3.eliminarAlimentosQueEngordan());
+    listaCompra3.eliminarAlimentosQueEngordan();
     listaCompra3.mostrarLista();
-
-
-
-
 
 
   }

@@ -29,16 +29,13 @@ export class ListaCompra2 {
   }
 
   mostrarLista() {
-
     for (let i = 0; i < this.compra.length; i++) {
       console.log(this.compra[i]);
     }
   }
 
   eliminarAlimentosQueEngordan() {
-
-    this.compra = this.compra.filter(ItemSupermercado);
-
+    this.compra = this.compra.filter(compra => compra.esSaludable());
   }
 
 
