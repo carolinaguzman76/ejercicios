@@ -35,9 +35,9 @@ export class ListaCompra2 {
     }
   }
 
-  eliminarAlimentosQueEngordan(itemAComprobar: ItemSupermercado) {
+  eliminarAlimentosQueEngordan() {
 
-    return this.compra.filter(itemAComprobar.esSaludable);
+    this.compra = this.compra.filter(ItemSupermercado);
 
   }
 
