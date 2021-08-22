@@ -12,6 +12,8 @@ import {PersonaConCuentaJoven} from "./ejercicios/personaConCuentaJoven";
 import {PreguntaDeTest} from "./ejercicios/preguntaDeTest";
 import {TestExamenFinal} from "./ejercicios/testExamenFinal";
 import {ListaCompra} from "./ejercicios/listaCompra";
+import {ItemSupermercado} from "./ejercicios/itemSupermercado";
+import {ListaCompra2} from "./ejercicios/listaCompra2";
 
 @Component({
   selector: 'app-root',
@@ -186,6 +188,32 @@ export class AppComponent {
     listaCompra1.agregarItemAListaDeCompra('cafe');
     console.log(listaCompra1.mostrarListaSimplemente());
     listaCompra1.mostrarLista();
+
+    // ejercicio item supermercado
+
+    let itemSupermercado1 = new ItemSupermercado('tomate frito', 1.2, 342);
+    let itemSupermercado2 = new ItemSupermercado('brocoli', 2, 45);
+    let itemSupermercado3 = new ItemSupermercado('manzana', 1, 80);
+    let listaCompra3 = new ListaCompra2([itemSupermercado1, itemSupermercado2]);
+
+    console.log(itemSupermercado1.esSaludable());
+    console.log(itemSupermercado2.esSaludable());
+    listaCompra3.agregarItemAListaDeCompra(itemSupermercado3);
+    listaCompra3.mostrarLista();
+    listaCompra3.vaciarListaDeLaCompra();
+    console.log('lista vacia');
+    console.log(listaCompra3);
+    listaCompra3.agregarItemAListaDeCompra(itemSupermercado3);
+    listaCompra3.agregarItemAListaDeCompra(itemSupermercado2);
+    listaCompra3.agregarItemAListaDeCompra(itemSupermercado1);
+    listaCompra3.mostrarLista();
+    console.log('filter');
+    console.log(listaCompra3.eliminarAlimentosQueEngordan(itemSupermercado3));
+
+
+
+
+
 
   }
 }
