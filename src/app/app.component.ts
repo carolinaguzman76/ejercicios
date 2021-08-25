@@ -210,6 +210,16 @@ export class AppComponent {
     listaCompra3.eliminarAlimentosQueEngordan();
     listaCompra3.mostrarLista();
 
+    // ampliación ejercicio lista compra
+
+    let itemSupermercado4 = new ItemSupermercado('pera', 3, 60);
+
+    console.log('a partir de aqui extension clase');
+    console.log(listaCompra3.dameTodosLosItemsConPrecioMenorA(2));
+    listaCompra3.agregarItemAListaDeCompra(itemSupermercado4);
+    listaCompra3.agregarItemAListaDeCompra(itemSupermercado2);
+    listaCompra3.mostrarLista();
+
 
   }
 }

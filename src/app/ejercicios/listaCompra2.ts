@@ -1,3 +1,20 @@
+// vamos a seguir extendiendo la clase "ListaCompra"
+//
+// Ahora vamos a crear los siguientes métodos
+//
+// dameTodosLosItemsConPrecioMenorA(precio:number): itemSupermercado[] <----- devuelve una lista con todos los items que
+// no superen el precio.
+
+// agregarItemAListaDeCompra(item: ItemSupermercado):void <-------= vamos a modificar este método para que NO no se
+// puedan añadir items duplicados, es decir, si el item YA EXISTIA, este no se añade.
+
+// eliminarAlimentosSanos():void <---- este método va a eliminar todos los items que sean saludables. (similar al método
+// eliminarAlimentosQueEngordan())
+
+// eliminarItemDeLista(item: ItemSupermercado): ItemSupermercado <----- elimina un item y devolvemos el item eliminado.
+
+// fusionarCompras(listaCompra: ListaCompra): void  <------ en este método vamos a fusionar las dos listas de las compras.
+
 import {ItemSupermercado} from "./itemSupermercado";
 
 export class ListaCompra2 {
@@ -15,17 +32,26 @@ export class ListaCompra2 {
     this._compra = compra;
   }
 
+  // Este metodo no comprueba si esta duplicado el item que se añade.
+
+  //   agregarItemAListaDeCompra(item: ItemSupermercado) {
+  //
+  //     return this.compra.push(item);
+  //   }
+
+
   agregarItemAListaDeCompra(item: ItemSupermercado) {
 
-    return this.compra.push(item);
+    if( this.compra.includes(item)) {
+      console.log( item.nombre + ' ya esta en la lista');
+    } else {
+      this.compra.push(item);
+    }
+    return this.compra;
   }
 
   vaciarListaDeLaCompra() {
     return this.compra = [];
-  }
-
-  mostrarListaSimplemente() {
-    return this.compra;
   }
 
   mostrarLista() {
@@ -37,6 +63,13 @@ export class ListaCompra2 {
   eliminarAlimentosQueEngordan() {
     this.compra = this.compra.filter(compra => compra.esSaludable());
   }
+
+  dameTodosLosItemsConPrecioMenorA(precio: number): ItemSupermercado[] {
+
+    return  this.compra.filter(precioItem => precioItem.precio < precio);
+  }
+
+
 
 
 }
