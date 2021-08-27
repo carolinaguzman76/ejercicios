@@ -213,12 +213,19 @@ export class AppComponent {
     // ampliación ejercicio lista compra
 
     let itemSupermercado4 = new ItemSupermercado('pera', 3, 60);
+    let itemSupermercado5 = new ItemSupermercado('arroz', 2.3, 160);
+    let itemSupermercado6 = new ItemSupermercado('ternera', 15, 260);
+    let listaCompra4 = new ListaCompra2([itemSupermercado5, itemSupermercado6]);
 
     console.log('a partir de aqui extension clase');
     console.log(listaCompra3.dameTodosLosItemsConPrecioMenorA(2));
     listaCompra3.agregarItemAListaDeCompra(itemSupermercado4);
     listaCompra3.agregarItemAListaDeCompra(itemSupermercado2);
     listaCompra3.mostrarLista();
+    listaCompra3.agregarItemAListaDeCompra(itemSupermercado1);
+    console.log(listaCompra3.eliminarAlimentosSanos());
+    console.log('concat');
+    console.log(listaCompra3.fusionarCompras(listaCompra4));
 
 
   }
