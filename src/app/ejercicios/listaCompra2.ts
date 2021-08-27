@@ -81,4 +81,5 @@ export class ListaCompra2 {
   fusionarCompras(listaCompra: ListaCompra2) {
    this.compra = this.compra.concat(listaCompra.compra);
   }
+
 }

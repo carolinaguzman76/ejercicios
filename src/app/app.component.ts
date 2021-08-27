@@ -231,5 +231,6 @@ export class AppComponent {
     listaCompra3.eliminarItemDeLista(itemSupermercado5);
     listaCompra3.mostrarLista();
 
+
   }
 }
