@@ -42,7 +42,6 @@ export class ListaCompra2 {
   // Este si verifica si ya existe en la lista.
 
   agregarItemAListaDeCompra(item: ItemSupermercado) {
-
     if (this.compra.includes(item)) {
       console.log(item.nombre + ' ya esta en la lista');
     } else {
@@ -66,7 +65,6 @@ export class ListaCompra2 {
   }
 
   dameTodosLosItemsConPrecioMenorA(precio: number): ItemSupermercado[] {
-
     return this.compra.filter(precioItem => precioItem.precio < precio);
   }
 
@@ -74,12 +72,13 @@ export class ListaCompra2 {
     return this.compra = this.compra.filter(compra => !compra.esSaludable());
   }
 
-  // eliminarItemDeLista(item: ItemSupermercado): ItemSupermercado {
-
-  // }
+   eliminarItemDeLista(item: ItemSupermercado): ItemSupermercado {
+    let indice = this.compra.indexOf(item);
+    this.compra.splice(indice, 1);
+    return item;
+   }
 
   fusionarCompras(listaCompra: ListaCompra2) {
-    this.compra = this.compra.concat(listaCompra);
+   this.compra = this.compra.concat(listaCompra.compra);
   }
-
 }

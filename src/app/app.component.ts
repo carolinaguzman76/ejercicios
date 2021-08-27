@@ -225,8 +225,11 @@ export class AppComponent {
     listaCompra3.agregarItemAListaDeCompra(itemSupermercado1);
     console.log(listaCompra3.eliminarAlimentosSanos());
     console.log('concat');
-    console.log(listaCompra3.fusionarCompras(listaCompra4));
-
+    listaCompra3.fusionarCompras(listaCompra4);
+    listaCompra3.mostrarLista();
+    console.log('eliminar item');
+    listaCompra3.eliminarItemDeLista(itemSupermercado5);
+    listaCompra3.mostrarLista();
 
   }
 }
