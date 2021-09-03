@@ -209,15 +209,17 @@ export class AppComponent {
     listaCompra3.mostrarLista();
     listaCompra3.eliminarAlimentosQueEngordan();
     listaCompra3.mostrarLista();
+    console.log('mostrar items inferiores a precio');
+    console.log(listaCompra3.dameTodosLosItemsConPrecioMenorA(1.5));
 
-    // ampliación ejercicio lista compra
+    // primera ampliación ejercicio lista compra
 
     let itemSupermercado4 = new ItemSupermercado('pera', 3, 60);
     let itemSupermercado5 = new ItemSupermercado('arroz', 2.3, 160);
-    let itemSupermercado6 = new ItemSupermercado('ternera', 15, 260);
+    let itemSupermercado6 = new ItemSupermercado('ternera', 15.5, 260);
     let listaCompra4 = new ListaCompra2([itemSupermercado5, itemSupermercado6]);
 
-    console.log('a partir de aqui extension clase');
+    console.log('a partir de aqui primera extensión clase');
     console.log(listaCompra3.dameTodosLosItemsConPrecioMenorA(2));
     listaCompra3.agregarItemAListaDeCompra(itemSupermercado4);
     listaCompra3.agregarItemAListaDeCompra(itemSupermercado2);
@@ -229,6 +231,26 @@ export class AppComponent {
     listaCompra3.mostrarLista();
     console.log('eliminar item');
     listaCompra3.eliminarItemDeLista(itemSupermercado5);
+    listaCompra3.mostrarLista();
+
+    // segunda ampliación ejercicio lista compra
+
+    let itemSupermercado7 = new ItemSupermercado('garbanzos', 2, 80);
+
+    console.log('a partir de aqui segunda extensión clase');
+    console.log(listaCompra3.calculaPrecioTotal());
+    listaCompra3.mostrarLista();
+    console.log(listaCompra3.dameTodosLosItemsSaludablesConPrecioMenorA(50));
+    console.log('despues de hacer saludables precio menor a');
+    listaCompra3.mostrarLista();
+    listaCompra3.aplicaDescuentoSobreItemsSaludables(100);
+    listaCompra3.mostrarLista();
+    listaCompra3.aplicaSobreCosteAItemsQueEngordan(20);
+    listaCompra3.mostrarLista();
+    console.log('ordenar lista por precio');
+    listaCompra3.agregarItemAListaDeCompra(itemSupermercado7);
+    listaCompra3.mostrarLista();
+    listaCompra3.ordenaListaPorPrecio();
     listaCompra3.mostrarLista();
 
 

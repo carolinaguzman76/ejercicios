@@ -15,6 +15,25 @@
 
 // fusionarCompras(listaCompra: ListaCompra): void  <------ en este método vamos a fusionar las dos listas de las compras.
 
+// Vamos a Seguir ampliando la clase ListaCompra:
+//
+// calculaPrecioTotal(): number <------ método que devuelve la suma de todos los artículos
+
+// dameTodosLosItemsSaludablesConPrecioMenorA(precio:number): itemSupermercado[] <------ devuelve todos los items
+// saludables y que además no superen cierto precio
+
+// aplicaDescuentoSobreItemsSaludables(descuento: number): void <------ a todos los items saludables, les va a aplicar
+// un descuento (modificando el precio del item) , debemos controlar que no hagamos Descuentos ni inferiores al 0% ni
+// superiores al 100%.
+// En ambos casos, mostramos Error por consola https://developer.mozilla.org/es/docs/Web/API/Console/error
+
+// aplicaSobreCosteAItemsQueEngordan(sobreCoste: number): void <------ sumamos el sobre coste a todos los elementos que
+// NO son saludables.
+
+// ordenaListaPorPrecio():void <------ Ordena la Lista de la compra por el precio de Menor a Mayor.
+// https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+
+
 import {ItemSupermercado} from "./itemSupermercado";
 
 export class ListaCompra2 {
@@ -72,14 +91,52 @@ export class ListaCompra2 {
     return this.compra = this.compra.filter(compra => !compra.esSaludable());
   }
 
-   eliminarItemDeLista(item: ItemSupermercado): ItemSupermercado {
+  eliminarItemDeLista(item: ItemSupermercado): ItemSupermercado {
     let indice = this.compra.indexOf(item);
     this.compra.splice(indice, 1);
     return item;
-   }
+  }
 
   fusionarCompras(listaCompra: ListaCompra2) {
-   this.compra = this.compra.concat(listaCompra.compra);
+    this.compra = this.compra.concat(listaCompra.compra);
+  }
+
+  calculaPrecioTotal(): number {
+    let precioTotal = 0;
+
+    for (let i = 0; i < this.compra.length; i++) {
+      precioTotal = precioTotal + this.compra[i].precio;
+    }
+    return precioTotal;
+  }
+
+  dameTodosLosItemsSaludablesConPrecioMenorA(precio: number): ItemSupermercado[] {
+    let itemsPrecioInferior = this.dameTodosLosItemsConPrecioMenorA(precio);
+    return itemsPrecioInferior.filter(compra => compra.esSaludable());
+  }
+
+  aplicaDescuentoSobreItemsSaludables(descuento: number) {
+    let itemsSaludables = this.compra.filter(compra => compra.esSaludable());
+
+    if (descuento == 0 || descuento == 100) {
+      console.error('Porcentaje de descuento erroneo, ha indicado ', descuento + ' %');
+    } else {
+      for (let i = 0; i < itemsSaludables.length; i++) {
+        itemsSaludables[i].precio = itemsSaludables[i].precio - itemsSaludables[i].precio * (descuento / 100);
+      }
+    }
+  }
+
+  aplicaSobreCosteAItemsQueEngordan(sobreCoste: number) {
+    let itemsNoSaludables = this.compra.filter(compra => !compra.esSaludable());
+
+    for (let i = 0; i < itemsNoSaludables.length; i++) {
+      itemsNoSaludables[i].precio = itemsNoSaludables[i].precio + itemsNoSaludables[i].precio * (sobreCoste / 100);
+    }
+  }
+
+  ordenaListaPorPrecio() {
+    this.compra.sort((a, b) => a.precio - b.precio);
   }
 
 }
