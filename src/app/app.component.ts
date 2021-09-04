@@ -236,6 +236,7 @@ export class AppComponent {
     // segunda ampliación ejercicio lista compra
 
     let itemSupermercado7 = new ItemSupermercado('garbanzos', 2, 80);
+    let listaCompra5 = new ListaCompra2([itemSupermercado2, itemSupermercado3, itemSupermercado4, itemSupermercado5]);
 
     console.log('a partir de aqui segunda extensión clase');
     console.log(listaCompra3.calculaPrecioTotal());
@@ -253,6 +254,66 @@ export class AppComponent {
     listaCompra3.ordenaListaPorPrecio();
     listaCompra3.mostrarLista();
 
+    // en el AppComponent, quiero que hagas el siguiente método:
+    //
+    // queListaEsMasSaludable(listaCompra1: ListaCompra,listaCompra2: ListaCompra): ListaCompra <---------- devuelve la
+    // lista con más elementos saludables.
+
+    // queListaEsMasBarata(listaCompra1: ListaCompra,listaCompra2: ListaCompra): ListaCompra <---------- devuelve la
+    // lista más barata.
+
+    function queListaEsMasSaludable(listaCompra1: ListaCompra2, listaCompra2: ListaCompra2) {
+      let contadorLista1 = 0;
+      let contadorLista2 = 0;
+
+      for (let i = 0; i < listaCompra1.compra.length; i++) {
+        contadorLista1 = contadorLista1 + 1;
+      }
+
+      for (let i = 0; i < listaCompra2.compra.length; i++) {
+        contadorLista2 = contadorLista2 + 1;
+      }
+
+      if (contadorLista1 > contadorLista2) {
+        console.log(listaCompra1);
+      }
+      if (contadorLista1 < contadorLista2) {
+        console.log(listaCompra2);
+      }
+      if (contadorLista1 == contadorLista2) {
+        console.log('Las 2 listas son igual de saludables');
+      }
+    }
+
+    function queListaEsMasBarata(listaCompra1: ListaCompra2, listaCompra2: ListaCompra2) {
+      let totalLista1 = 0;
+      let totalLista2 = 0;
+
+      for (let i = 0; i < listaCompra1.compra.length; i++) {
+        totalLista1 = totalLista1 + listaCompra1.compra[i].precio;
+      }
+
+      for (let i = 0; i < listaCompra2.compra.length; i++) {
+        totalLista2 = totalLista2 + listaCompra2.compra[i].precio;
+      }
+
+      if (totalLista1 > totalLista2) {
+        console.log(listaCompra2);
+      }
+      if (totalLista1 < totalLista2) {
+        console.log(listaCompra1);
+      }
+      if (totalLista1 == totalLista2) {
+        console.log('Las 2 listas tienen el mismo total');
+      }
+    }
+
+    console.log('funciones en app.component');
+
+    queListaEsMasSaludable(listaCompra3, listaCompra4);
+    queListaEsMasSaludable(listaCompra3, listaCompra5);
+    queListaEsMasBarata(listaCompra3, listaCompra4);
+    queListaEsMasBarata(listaCompra3, listaCompra5);
 
   }
 }
