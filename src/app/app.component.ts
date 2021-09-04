@@ -244,7 +244,7 @@ export class AppComponent {
     console.log(listaCompra3.dameTodosLosItemsSaludablesConPrecioMenorA(50));
     console.log('despues de hacer saludables precio menor a');
     listaCompra3.mostrarLista();
-    listaCompra3.aplicaDescuentoSobreItemsSaludables(100);
+    listaCompra3.aplicaDescuentoSobreItemsSaludables(102);
     listaCompra3.mostrarLista();
     listaCompra3.aplicaSobreCosteAItemsQueEngordan(20);
     listaCompra3.mostrarLista();

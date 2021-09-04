@@ -118,7 +118,7 @@ export class ListaCompra2 {
   aplicaDescuentoSobreItemsSaludables(descuento: number) {
     let itemsSaludables = this.compra.filter(compra => compra.esSaludable());
 
-    if (descuento == 0 || descuento == 100) {
+    if (descuento <= 0 || descuento >= 100) {
       console.error('Porcentaje de descuento erroneo, ha indicado ', descuento + ' %');
     } else {
       for (let i = 0; i < itemsSaludables.length; i++) {
@@ -128,7 +128,7 @@ export class ListaCompra2 {
   }
 
   aplicaSobreCosteAItemsQueEngordan(sobreCoste: number) {
-    let itemsNoSaludables = this.compra.filter(compra => !compra.esSaludable());
+    let itemsNoSaludables = this.eliminarAlimentosSanos();
 
     for (let i = 0; i < itemsNoSaludables.length; i++) {
       itemsNoSaludables[i].precio = itemsNoSaludables[i].precio + itemsNoSaludables[i].precio * (sobreCoste / 100);
