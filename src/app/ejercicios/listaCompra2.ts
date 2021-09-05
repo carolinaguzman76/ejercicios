@@ -80,7 +80,7 @@ export class ListaCompra2 {
   }
 
   eliminarAlimentosQueEngordan() {
-    this.compra = this.compra.filter(compra => compra.esSaludable());
+   return this.compra = this.compra.filter(compra => compra.esSaludable());
   }
 
   dameTodosLosItemsConPrecioMenorA(precio: number): ItemSupermercado[] {
@@ -111,8 +111,8 @@ export class ListaCompra2 {
   }
 
   dameTodosLosItemsSaludablesConPrecioMenorA(precio: number): ItemSupermercado[] {
-    let itemsPrecioInferior = this.dameTodosLosItemsConPrecioMenorA(precio);
-    return itemsPrecioInferior.filter(compra => compra.esSaludable());
+    this.compra = this.dameTodosLosItemsConPrecioMenorA(precio);
+    return this.eliminarAlimentosQueEngordan();
   }
 
   aplicaDescuentoSobreItemsSaludables(descuento: number) {
