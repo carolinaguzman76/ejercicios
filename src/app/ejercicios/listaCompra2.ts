@@ -111,8 +111,7 @@ export class ListaCompra2 {
   }
 
   dameTodosLosItemsSaludablesConPrecioMenorA(precio: number): ItemSupermercado[] {
-    this.compra = this.dameTodosLosItemsConPrecioMenorA(precio);
-    return this.eliminarAlimentosQueEngordan();
+   return this.compra.filter(compra => compra.esSaludable() && this.dameTodosLosItemsConPrecioMenorA(precio));
   }
 
   aplicaDescuentoSobreItemsSaludables(descuento: number) {
