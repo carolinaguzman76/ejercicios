@@ -33,6 +33,36 @@
 // ordenaListaPorPrecio():void <------ Ordena la Lista de la compra por el precio de Menor a Mayor.
 // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 
+// nueva version de "aplicaSobreCosteAItemsQueEngordan(sobreCoste: number)"
+//
+//  Ahora, NO QUIERO que se modifica la lista original, quiero crear otra con el sobre coste aplicado
+//
+//  PISTA:
+//
+//  Usar el método filter map
+//
+// Ejemplo de un método que usa filter y map.
+//
+// El siguiente método va a hacer 2 cosas,
+//
+// primero va a filtrar los elementos mayores que 10.
+// luego los elementos que han pasado el filtro, los va a devolver multiplicado por 2.
+//
+//
+//
+//   pruebaMap(): number[] {
+//     const miMapa: number[] = [1,2,3,4,5,6,15,20]
+//
+//     const miMapaConTodosLosNumerosDuplicadosExceptoLosMayoresDe10: number[] =
+//     miMapa.filter(numberAEliminar=>{
+//       return numberAEliminar<10;
+//     }).map(numberDelMapa=>{
+//       return numberDelMapa*2;
+//     })
+//
+//     return miMapaConTodosLosNumerosDuplicadosExceptoLosMayoresDe10;
+//   }
+
 
 import {ItemSupermercado} from "./itemSupermercado";
 
@@ -80,7 +110,7 @@ export class ListaCompra2 {
   }
 
   eliminarAlimentosQueEngordan() {
-   return this.compra = this.compra.filter(compra => compra.esSaludable());
+    return this.compra = this.compra.filter(compra => compra.esSaludable());
   }
 
   dameTodosLosItemsConPrecioMenorA(precio: number): ItemSupermercado[] {
@@ -111,7 +141,7 @@ export class ListaCompra2 {
   }
 
   dameTodosLosItemsSaludablesConPrecioMenorA(precio: number): ItemSupermercado[] {
-   return this.compra.filter(compra => compra.esSaludable() && compra.precio < precio);
+    return this.compra.filter(compra => compra.esSaludable() && compra.precio < precio);
   }
 
   aplicaDescuentoSobreItemsSaludables(descuento: number) {
@@ -126,12 +156,22 @@ export class ListaCompra2 {
     }
   }
 
-  aplicaSobreCosteAItemsQueEngordan(sobreCoste: number) {
-    let itemsNoSaludables = this.eliminarAlimentosSanos();
+  // Este metodo modifica la lista original.
 
-    for (let i = 0; i < itemsNoSaludables.length; i++) {
-      itemsNoSaludables[i].precio = itemsNoSaludables[i].precio + itemsNoSaludables[i].precio * (sobreCoste / 100);
-    }
+  // aplicaSobreCosteAItemsQueEngordan(sobreCoste: number) {
+  // let itemsNoSaludables = this.eliminarAlimentosSanos();
+
+  // for (let i = 0; i < itemsNoSaludables.length; i++) {
+  // itemsNoSaludables[i].precio = itemsNoSaludables[i].precio + itemsNoSaludables[i].precio * (sobreCoste / 100);
+  // }
+  // }
+
+  // Este metodo no modifica la lista original.
+
+  aplicaSobreCosteAItemsQueEngordan(sobreCoste: number) {
+    return this.eliminarAlimentosSanos().map(itemsConSobreCoste => {
+      return itemsConSobreCoste.precio = itemsConSobreCoste.precio + itemsConSobreCoste.precio * (sobreCoste / 100);
+    });
   }
 
   ordenaListaPorPrecio() {
@@ -139,3 +179,5 @@ export class ListaCompra2 {
   }
 
 }
+
+

@@ -236,6 +236,7 @@ export class AppComponent {
     // segunda ampliación ejercicio lista compra
 
     let itemSupermercado7 = new ItemSupermercado('garbanzos', 2, 80);
+    let itemSupermercado8 = new ItemSupermercado('galletas chocolate', 2, 410);
     let listaCompra5 = new ListaCompra2([itemSupermercado2, itemSupermercado3, itemSupermercado4, itemSupermercado5]);
 
     console.log('a partir de aqui segunda extensión clase');
@@ -246,7 +247,10 @@ export class AppComponent {
     listaCompra3.mostrarLista();
     listaCompra3.aplicaDescuentoSobreItemsSaludables(102);
     listaCompra3.mostrarLista();
-    listaCompra3.aplicaSobreCosteAItemsQueEngordan(20);
+    console.log('aqui se aplica el sobre coste');
+    listaCompra3.agregarItemAListaDeCompra(itemSupermercado8);
+    listaCompra3.aplicaSobreCosteAItemsQueEngordan(50);
+    console.log('enseña la lista');
     listaCompra3.mostrarLista();
     console.log('ordenar lista por precio');
     listaCompra3.agregarItemAListaDeCompra(itemSupermercado7);
