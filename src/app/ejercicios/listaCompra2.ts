@@ -118,7 +118,7 @@ export class ListaCompra2 {
   }
 
   eliminarAlimentosSanos() {
-    return this.compra = this.compra.filter(compra => !compra.esSaludable());
+    this.compra = this.compra.filter(compra => !compra.esSaludable());
   }
 
   eliminarItemDeLista(item: ItemSupermercado): ItemSupermercado {
@@ -169,9 +169,20 @@ export class ListaCompra2 {
   // Este metodo no modifica la lista original.
 
   aplicaSobreCosteAItemsQueEngordan(sobreCoste: number) {
-    return this.eliminarAlimentosSanos().map(itemsConSobreCoste => {
-      return itemsConSobreCoste.precio = itemsConSobreCoste.precio + itemsConSobreCoste.precio * (sobreCoste / 100);
-    });
+    //  let itemsConSobreCosteAplicado = this.eliminarAlimentosSanos().map(itemsConSobreCoste => {
+    //      return itemsConSobreCoste.precio = itemsConSobreCoste.precio + itemsConSobreCoste.precio * (sobreCoste / 100);
+    //    })
+    //  return itemsConSobreCosteAplicado;
+
+
+    let itemsConSobreCosteAplicado =
+      this.compra.filter(items => {
+        return items.calorias > 300;
+      }).map(itemsConSobreCoste => {
+        return itemsConSobreCoste.precio = itemsConSobreCoste.precio + itemsConSobreCoste.precio * (sobreCoste / 100);
+      })
+
+    return itemsConSobreCosteAplicado;
   }
 
   ordenaListaPorPrecio() {
