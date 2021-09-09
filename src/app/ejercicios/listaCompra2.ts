@@ -90,7 +90,7 @@ export class ListaCompra2 {
 
   // Este si verifica si ya existe en la lista.
 
-  agregarItemAListaDeCompra(item: ItemSupermercado) {
+  agregarItemAListaDeCompra(item: ItemSupermercado): ItemSupermercado[] {
     if (this.compra.includes(item)) {
       console.log(item.nombre + ' ya esta en la lista');
     } else {
@@ -99,17 +99,17 @@ export class ListaCompra2 {
     return this.compra;
   }
 
-  vaciarListaDeLaCompra() {
+  vaciarListaDeLaCompra(): ItemSupermercado[] {
     return this.compra = [];
   }
 
-  mostrarLista() {
+  mostrarLista(): void {
     for (let i = 0; i < this.compra.length; i++) {
       console.log(this.compra[i]);
     }
   }
 
-  eliminarAlimentosQueEngordan() {
+  eliminarAlimentosQueEngordan(): ItemSupermercado[] {
     return this.compra = this.compra.filter(compra => compra.esSaludable());
   }
 
@@ -117,7 +117,7 @@ export class ListaCompra2 {
     return this.compra.filter(precioItem => precioItem.precio < precio);
   }
 
-  eliminarAlimentosSanos() {
+  eliminarAlimentosSanos(): void {
     this.compra = this.compra.filter(compra => !compra.esSaludable());
   }
 
@@ -127,7 +127,7 @@ export class ListaCompra2 {
     return item;
   }
 
-  fusionarCompras(listaCompra: ListaCompra2) {
+  fusionarCompras(listaCompra: ListaCompra2): void {
     this.compra = this.compra.concat(listaCompra.compra);
   }
 
@@ -144,7 +144,7 @@ export class ListaCompra2 {
     return this.compra.filter(compra => compra.esSaludable() && compra.precio < precio);
   }
 
-  aplicaDescuentoSobreItemsSaludables(descuento: number) {
+  aplicaDescuentoSobreItemsSaludables(descuento: number): void {
     let itemsSaludables = this.compra.filter(compra => compra.esSaludable());
 
     if (descuento <= 0 || descuento >= 100) {
@@ -185,7 +185,7 @@ export class ListaCompra2 {
     return itemsConSobreCosteAplicado;
   }
 
-  ordenaListaPorPrecio() {
+  ordenaListaPorPrecio(): void {
     this.compra.sort((a, b) => a.precio - b.precio);
   }
 

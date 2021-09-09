@@ -100,7 +100,7 @@ export class PersonaImc {
     }
   }
 
-  toStringPersona() {
+  toStringPersona(): string {
     const datos = this;
 
     return 'El nombre es ' + datos.nombre + ', su edad es ' + datos.edad + ' años' + '. El sexo es ' + datos.sexo + '. Su peso y altura son: ' + datos.peso + ' y ' + datos.altura + '. El DNI es ' + datos.DNI;

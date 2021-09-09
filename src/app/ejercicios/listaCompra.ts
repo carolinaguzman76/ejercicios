@@ -25,20 +25,20 @@ export class ListaCompra {
     this._compra = compra;
   }
 
-  agregarItemAListaDeCompra(item: string) {
+  agregarItemAListaDeCompra(item: string): number {
 
     return this.compra.push(item);
   }
 
-  vaciarListaDeLaCompra() {
+  vaciarListaDeLaCompra(): ListaCompra[] {
     return this.compra = [];
   }
 
-  mostrarListaSimplemente() {
+  mostrarListaSimplemente(): string[] {
     return this.compra;
   }
 
-  mostrarLista() {
+  mostrarLista(): void {
 
     for (let i = 0; i < this.compra.length ; i++) {
       console.log(this.compra[i]);

@@ -95,13 +95,13 @@ export class TestExamenFinal {
     this._pregunta6 = pregunta6;
   }
 
-  mostrarExamen() {
+  mostrarExamen(): string {
     return this.pregunta1.pregunta + ' ' + this.pregunta2.pregunta + ' ' + this.pregunta3.pregunta + ' ' +
       this.pregunta4.pregunta + ' ' + this.pregunta5.pregunta + ' ' + this.pregunta6.pregunta;
   }
 
   responderExamen(respuesta1: string, respuesta2: string, respuesta3: string, respuesta4: string, respuesta5: string,
-                  respuesta6: string) {
+                  respuesta6: string): PreguntaDeTest {
     let respuestasCorrectas = 0;
 
     if(this.pregunta1.responder(respuesta1)) {

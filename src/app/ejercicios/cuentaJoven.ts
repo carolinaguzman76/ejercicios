@@ -101,7 +101,7 @@ export class CuentaJoven {
     return 'Cuenta joven. El saldo actual es: ' + dinero + ' euros';
   }
 
-  ingresar(cantidadIngresada: number) {
+  ingresar(cantidadIngresada: number): number {
 
     if (cantidadIngresada < 3000) {
      this.dinero = this.dinero + cantidadIngresada;

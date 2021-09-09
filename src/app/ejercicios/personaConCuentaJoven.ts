@@ -64,7 +64,7 @@ export class PersonaConCuentaJoven {
     this._cuentaJoven = cuentaJoven;
   }
 
-  titularValidoMostrarRetirar(cantidadRetirada: number) {
+  titularValidoMostrarRetirar(cantidadRetirada: number): string {
     this.cuentaJoven.retirar(cantidadRetirada);
 
     return 'Los datos del titular son: Nombre titular ' + this.nombre + ' Edad ' + this.edad + ' DNI '

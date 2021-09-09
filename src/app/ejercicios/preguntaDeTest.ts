@@ -100,7 +100,7 @@ export class PreguntaDeTest {
   responder(respuestaAPregunta: string): boolean {
     return respuestaAPregunta == this._respuesta;
   }
-  mostrarPorConsola() {
+  mostrarPorConsola(): string {
     return 'Elige la opcion correcta para la pregunta: ' +  this._pregunta + ' ' + 'Opcion 1: ' + this._opcion1 +  ' ' +
       'Opcion 2: ' + this._opcion2 + ' ' + 'Opcion 3: ' + this._opcion3 + ' ' + 'Opcion 4: ' +  this._opcion4;
   }
