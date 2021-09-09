@@ -168,7 +168,7 @@ export class ListaCompra2 {
 
   // Este metodo no modifica la lista original.
 
-  aplicaSobreCosteAItemsQueEngordan(sobreCoste: number) {
+  aplicaSobreCosteAItemsQueEngordan(sobreCoste: number): number[] {
     //  let itemsConSobreCosteAplicado = this.eliminarAlimentosSanos().map(itemsConSobreCoste => {
     //      return itemsConSobreCoste.precio = itemsConSobreCoste.precio + itemsConSobreCoste.precio * (sobreCoste / 100);
     //    })

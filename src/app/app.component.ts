@@ -225,7 +225,6 @@ export class AppComponent {
     listaCompra3.agregarItemAListaDeCompra(itemSupermercado2);
     listaCompra3.mostrarLista();
     listaCompra3.agregarItemAListaDeCompra(itemSupermercado1);
-    console.log(listaCompra3.eliminarAlimentosSanos());
     console.log('concat');
     listaCompra3.fusionarCompras(listaCompra4);
     listaCompra3.mostrarLista();
@@ -266,7 +265,7 @@ export class AppComponent {
     // queListaEsMasBarata(listaCompra1: ListaCompra,listaCompra2: ListaCompra): ListaCompra <---------- devuelve la
     // lista más barata.
 
-    function queListaEsMasSaludable(listaCompra1: ListaCompra2, listaCompra2: ListaCompra2) {
+    function queListaEsMasSaludable(listaCompra1: ListaCompra2, listaCompra2: ListaCompra2): void {
       let contadorLista1 = 0;
       let contadorLista2 = 0;
 
@@ -289,7 +288,7 @@ export class AppComponent {
       }
     }
 
-    function queListaEsMasBarata(listaCompra1: ListaCompra2, listaCompra2: ListaCompra2) {
+    function queListaEsMasBarata(listaCompra1: ListaCompra2, listaCompra2: ListaCompra2): void {
       let totalLista1 = 0;
       let totalLista2 = 0;
 
@@ -313,7 +312,7 @@ export class AppComponent {
     }
 
     console.log('funciones en app.component');
-
+    console.log('primer tipo');
     queListaEsMasSaludable(listaCompra3, listaCompra4);
     queListaEsMasSaludable(listaCompra3, listaCompra5);
     queListaEsMasBarata(listaCompra3, listaCompra4);

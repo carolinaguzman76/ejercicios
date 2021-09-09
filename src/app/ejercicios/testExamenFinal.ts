@@ -101,7 +101,7 @@ export class TestExamenFinal {
   }
 
   responderExamen(respuesta1: string, respuesta2: string, respuesta3: string, respuesta4: string, respuesta5: string,
-                  respuesta6: string): PreguntaDeTest {
+                  respuesta6: string): string {
     let respuestasCorrectas = 0;
 
     if(this.pregunta1.responder(respuesta1)) {
