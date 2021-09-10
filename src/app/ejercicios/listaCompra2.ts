@@ -168,21 +168,20 @@ export class ListaCompra2 {
 
   // Este metodo no modifica la lista original.
 
-  aplicaSobreCosteAItemsQueEngordan(sobreCoste: number): number[] {
-    //  let itemsConSobreCosteAplicado = this.eliminarAlimentosSanos().map(itemsConSobreCoste => {
-    //      return itemsConSobreCoste.precio = itemsConSobreCoste.precio + itemsConSobreCoste.precio * (sobreCoste / 100);
-    //    })
-    //  return itemsConSobreCosteAplicado;
+  aplicaSobreCosteAItemsQueEngordan(sobreCoste: number): ItemSupermercado[] {
 
-
-    let itemsConSobreCosteAplicado =
-      this.compra.filter(items => {
-        return items.calorias > 300;
-      }).map(itemsConSobreCoste => {
-        return itemsConSobreCoste.precio = itemsConSobreCoste.precio + itemsConSobreCoste.precio * (sobreCoste / 100);
-      })
-
-    return itemsConSobreCosteAplicado;
+    return this.compra.filter(items => {
+      return items.calorias > 300;
+    }).map(itemsCopia => {
+      let itemNuevo = new ItemSupermercado(itemsCopia.nombre, 0, itemsCopia.calorias);
+      console.log('antes de la asignacion de sobre coste')
+      console.log(itemsCopia.precio);
+      itemNuevo.precio = itemsCopia.precio + itemsCopia.precio * (sobreCoste / 100);
+      console.log('despues de la asignacion de sobre coste');
+      console.log(itemsCopia.precio);
+      console.log(itemNuevo.precio);
+      return itemNuevo;
+    });
   }
 
   ordenaListaPorPrecio(): void {
