@@ -14,6 +14,7 @@ import {TestExamenFinal} from "./ejercicios/testExamenFinal";
 import {ListaCompra} from "./ejercicios/listaCompra";
 import {ItemSupermercado} from "./ejercicios/itemSupermercado";
 import {ListaCompra2} from "./ejercicios/listaCompra2";
+import {ItemSupermercado2} from "./ejercicios/itemSupermercado2";
 
 @Component({
   selector: 'app-root',
@@ -322,6 +323,15 @@ export class AppComponent {
     queListaEsMasSaludable(listaCompra3, listaCompra5);
     queListaEsMasBarata(listaCompra3, listaCompra4);
     queListaEsMasBarata(listaCompra3, listaCompra5);
+
+    // ejercicio segunda ampliación itemSupermercado
+
+    let itemSupermercado10 = new ItemSupermercado2('Cereales rellenos', 4.20, 447, 'Hacendado',
+      new Date(2022,5,19), ['Cereales 42%', "Leche Desnatada en polvo 2%", "B12", "Hierro"],
+      ["Verter Leche en el tazón", "Comer los crujientes cereales"]);
+
+    console.log('Segunda ampliación ItemSupermercado');
+    console.log(itemSupermercado10);
 
   }
 }
