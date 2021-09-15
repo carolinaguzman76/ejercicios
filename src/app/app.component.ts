@@ -329,9 +329,18 @@ export class AppComponent {
     let itemSupermercado10 = new ItemSupermercado2('Cereales rellenos', 4.20, 447, 'Hacendado',
       new Date(2022,5,19), ['Cereales 42%', "Leche Desnatada en polvo 2%", "B12", "Hierro"],
       ["Verter Leche en el tazón", "Comer los crujientes cereales"]);
+    let itemSupermercado11 = new ItemSupermercado2('Atún claro en conserva', 3.95, 357, 'Hacendado',
+      new Date(2025,8,9), ['Atún claro', "Aceite de oliva", "Sal"],
+      ["Verter y usar al gusto", "Se aconseja consumir el contenido de la lata en su totalidad"]);
 
     console.log('Segunda ampliación ItemSupermercado');
     console.log(itemSupermercado10);
+    console.log('------------ para borrar despues de implementar el metodo en la clase de supermercado --------------');
+    console.log(itemSupermercado10.contineHierro());
+    console.log(itemSupermercado11.contineHierro());
+    console.log(itemSupermercado10.comprobacionMarca());
+
+
 
   }
 }

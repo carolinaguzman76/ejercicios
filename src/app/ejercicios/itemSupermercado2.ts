@@ -1,10 +1,10 @@
 // Vamos a seguir con los itemSupermercado
 //
-// a la clase ItemDeSUpermercado vamos a añadirle más información
+// a la clase ItemDeSupermercado vamos a añadirle más información
 //
 // marca: string; <----- la marca del producto
 // fechaDeCaducidad: Date <----- fecha en la que caduca el producto.  'el tipo es Date'
-// ingredientes: string[] <----- lista de ingradientes
+// ingredientes: string[] <----- lista de ingredientes
 // instruccionesDeUso: string[] <------- como se consume.
 //
 // Ejemplo
@@ -17,6 +17,12 @@
 //     "fechaDeCaducidad":"19-06-2022",
 //     "ingredientes":["Cereales 42%", "Leche Desnatada en polvo 2%", "B12", "Hierro"],
 //     "instruccionesDeUso": ["Verter Leche en el tazón", "Comer los crujientes cereales"]
+//
+//      Funciones que necesito:
+//      - Comprobar si tiene hierro
+//      - Comprobar si esta caducado o le queda una semana
+//      - Comprobar marca
+//      - Comprobar si contiene instrucciones
 
 export class ItemSupermercado2 {
   private _nombre: string;
@@ -97,5 +103,27 @@ export class ItemSupermercado2 {
   esSaludable(): boolean {
     return this.calorias < 300;
   }
+
+  contineHierro(): boolean {
+   return this.ingredientes.includes('Hierro');
+  }
+
+  comprobacionMarca(): string {
+    switch (this.marca) {
+      case 'Hacendado':
+        return 'H';
+      case 'Alcampo':
+        return  'A';
+      case 'Carrefour':
+        return 'C';
+      default:
+        return 'No es una marca correcta';
+    }
+  }
+
+  contieneInstrucciones() {
+    // ver como poner que una propiedad no es obligatoria primero y luego ver como hacer la comprobacion
+  }
+
 
 }
