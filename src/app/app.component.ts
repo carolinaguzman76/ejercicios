@@ -327,11 +327,14 @@ export class AppComponent {
     // ejercicio segunda ampliación itemSupermercado
 
     let itemSupermercado10 = new ItemSupermercado2('Cereales rellenos', 4.20, 447, 'Hacendado',
-      new Date(2022,5,19), ['Cereales 42%', "Leche Desnatada en polvo 2%", "B12", "Hierro"],
-      ["Verter Leche en el tazón", "Comer los crujientes cereales"]);
+      new Date(2022,5,19), ['Cereales 42%', 'Leche Desnatada en polvo 2%', 'B12', 'Hierro'],
+      ['Verter leche en el tazón', 'Comer los crujientes cereales']);
     let itemSupermercado11 = new ItemSupermercado2('Atún claro en conserva', 3.95, 357, 'Hacendado',
-      new Date(2025,8,9), ['Atún claro', "Aceite de oliva", "Sal"],
-      ["Verter y usar al gusto", "Se aconseja consumir el contenido de la lata en su totalidad"]);
+      new Date(2025,8,9), ['Atún claro', 'Aceite de oliva', 'Sal'],
+      ['Verter y usar al gusto', 'Se aconseja consumir el contenido de la lata en su totalidad']);
+    let itemSupermercado12 = new ItemSupermercado2('Bombones rellenos', 2.80, 570, 'Alcampo',
+      new Date(2021,8,18), ['Azucar', 'Cacao', 'Licor', 'Aceite refinado'],
+      []);
 
     console.log('Segunda ampliación ItemSupermercado');
     console.log(itemSupermercado10);
@@ -339,6 +342,15 @@ export class AppComponent {
     console.log(itemSupermercado10.contineHierro());
     console.log(itemSupermercado11.contineHierro());
     console.log(itemSupermercado10.comprobacionMarca());
+    console.log(itemSupermercado12);
+    console.log(itemSupermercado12.instruccionesDeUso);
+    itemSupermercado10.contieneInstrucciones();
+    itemSupermercado12.contieneInstrucciones();
+    itemSupermercado12.comprobacionFechaCaducidad();
+    itemSupermercado10.comprobacionFechaCaducidad();
+    console.log('ejemplo calculo');
+    itemSupermercado10.prueba();
+    itemSupermercado10.prueba();
 
 
 

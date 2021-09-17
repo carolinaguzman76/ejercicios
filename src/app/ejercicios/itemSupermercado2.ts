@@ -31,7 +31,7 @@ export class ItemSupermercado2 {
   private _marca: string;
   private _fechaDeCaducidad: Date;
   private _ingredientes: string[];
-  private _instruccionesDeUso: string[];
+  private _instruccionesDeUso?: string[] | undefined;
 
   constructor(nombre: string, precio: number, calorias: number, marca: string, fechaDeCaducidad: Date,
               ingredientes: string[], instruccionesDeUso: string[]) {
@@ -92,11 +92,11 @@ export class ItemSupermercado2 {
     this._ingredientes = ingredientes;
   }
 
-  get instruccionesDeUso(): string[] {
+  get instruccionesDeUso(): string[] | undefined {
     return this._instruccionesDeUso;
   }
 
-  set instruccionesDeUso(instruccionesDeUso: string[]) {
+  set instruccionesDeUso(instruccionesDeUso: string[] | undefined) {
     this._instruccionesDeUso = instruccionesDeUso;
   }
 
@@ -105,7 +105,7 @@ export class ItemSupermercado2 {
   }
 
   contineHierro(): boolean {
-   return this.ingredientes.includes('Hierro');
+    return this.ingredientes.includes('Hierro');
   }
 
   comprobacionMarca(): string {
@@ -113,7 +113,7 @@ export class ItemSupermercado2 {
       case 'Hacendado':
         return 'H';
       case 'Alcampo':
-        return  'A';
+        return 'A';
       case 'Carrefour':
         return 'C';
       default:
@@ -121,9 +121,41 @@ export class ItemSupermercado2 {
     }
   }
 
-  contieneInstrucciones() {
-    // ver como poner que una propiedad no es obligatoria primero y luego ver como hacer la comprobacion
+  // no esta funcionando, devuelve true en los dos ejemplos
+
+  contieneInstrucciones(): boolean {
+    console.log(typeof this.instruccionesDeUso);
+    if (this.instruccionesDeUso == []) {
+      console.log('dentro del if false');
+      return false;
+    } else {
+      console.log('dentro del if true')
+      return true;
+    }
   }
 
+  comprobacionFechaCaducidad(): void {
+    let fechaActual = new Date();
+    console.log(fechaActual);
+    console.log(fechaActual.getTime());
+    console.log(this.fechaDeCaducidad);
+    console.log(this.fechaDeCaducidad.getTime());
+
+    let diferenciaEntreFechas = this.fechaDeCaducidad.getTime() - fechaActual.getTime();
+    let conversionADias = 1000 * 60 * 60 * 24
+    let conversionDiferencia = diferenciaEntreFechas / conversionADias;
+    console.log(diferenciaEntreFechas);
+    console.log(conversionDiferencia);
+
+
+  }
+
+  prueba(): void {
+    let  date1 = new Date("2020-12-10").getTime();
+    let   date2 = new Date("2021-10-31").getTime();
+    let day = 1000*60*60*24;
+    let   time_difference = (date1 - date2) / day
+    console.log(time_difference);
+  }
 
 }
