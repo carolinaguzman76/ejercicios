@@ -125,7 +125,7 @@ export class ItemSupermercado2 {
 
   contieneInstrucciones(): boolean {
     console.log(typeof this.instruccionesDeUso);
-    if (this.instruccionesDeUso == []) {
+    if (this.instruccionesDeUso == undefined) {
       console.log('dentro del if false');
       return false;
     } else {
@@ -134,28 +134,12 @@ export class ItemSupermercado2 {
     }
   }
 
-  comprobacionFechaCaducidad(): void {
+  comprobacionFechaCaducidad(): boolean {
     let fechaActual = new Date();
-    console.log(fechaActual);
-    console.log(fechaActual.getTime());
-    console.log(this.fechaDeCaducidad);
-    console.log(this.fechaDeCaducidad.getTime());
+    let DiferenciaEntreFechas = (this.fechaDeCaducidad.getTime() - fechaActual.getTime()) / (1000 * 60 * 60 * 24);
 
-    let diferenciaEntreFechas = this.fechaDeCaducidad.getTime() - fechaActual.getTime();
-    let conversionADias = 1000 * 60 * 60 * 24
-    let conversionDiferencia = diferenciaEntreFechas / conversionADias;
-    console.log(diferenciaEntreFechas);
-    console.log(conversionDiferencia);
-
-
+    return DiferenciaEntreFechas < 7;
   }
 
-  prueba(): void {
-    let  date1 = new Date("2020-12-10").getTime();
-    let   date2 = new Date("2021-10-31").getTime();
-    let day = 1000*60*60*24;
-    let   time_difference = (date1 - date2) / day
-    console.log(time_difference);
-  }
 
 }
