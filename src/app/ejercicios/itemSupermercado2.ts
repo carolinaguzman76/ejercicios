@@ -125,7 +125,7 @@ export class ItemSupermercado2 {
 
   contieneInstrucciones(): boolean {
     console.log(typeof this.instruccionesDeUso);
-    if (this.instruccionesDeUso == undefined) {
+    if (this.instruccionesDeUso == []) {
       console.log('dentro del if false');
       return false;
     } else {
@@ -134,12 +134,21 @@ export class ItemSupermercado2 {
     }
   }
 
-  comprobacionFechaCaducidad(): boolean {
+  comprobacionFechaCaducidad(): string {
     let fechaActual = new Date();
-    let DiferenciaEntreFechas = (this.fechaDeCaducidad.getTime() - fechaActual.getTime()) / (1000 * 60 * 60 * 24);
+    let diferenciaEntreFechas = (this.fechaDeCaducidad.getTime() - fechaActual.getTime()) / (1000 * 60 * 60 * 24);
 
-    return DiferenciaEntreFechas < 7;
+    if (diferenciaEntreFechas < 7) {
+      return 'caducado';
+    } if (diferenciaEntreFechas >= 7 && diferenciaEntreFechas < 8 ) {
+      return 'proxima caducidad';
+    } else {
+      return 'sin caducar';
+    }
+
+
   }
+
 
 
 }

@@ -15,6 +15,11 @@ import {ListaCompra} from "./ejercicios/listaCompra";
 import {ItemSupermercado} from "./ejercicios/itemSupermercado";
 import {ListaCompra2} from "./ejercicios/listaCompra2";
 import {ItemSupermercado2} from "./ejercicios/itemSupermercado2";
+import {ListaCompraAlcampo} from "./ejercicios/listaCompraAlcampo";
+import {ListaCompra3} from "./ejercicios/listaCompra3";
+import {ListaCompraCarrefour} from "./ejercicios/listaCompraCarrefour";
+import {ListaCompraHacendado} from "./ejercicios/listaCompraHacendado";
+
 
 @Component({
   selector: 'app-root',
@@ -324,33 +329,29 @@ export class AppComponent {
     queListaEsMasBarata(listaCompra3, listaCompra4);
     queListaEsMasBarata(listaCompra3, listaCompra5);
 
-    // ejercicio segunda ampliación itemSupermercado
+    // ejercicio segunda ampliación itemSupermercado (marcas)
 
     let itemSupermercado10 = new ItemSupermercado2('Cereales rellenos', 4.20, 447, 'Hacendado',
-      new Date(2021,8,25), ['Cereales 42%', 'Leche Desnatada en polvo 2%', 'B12', 'Hierro'],
+      new Date(2021, 8, 25), ['Cereales 42%', 'Leche Desnatada en polvo 2%', 'B12', 'Hierro'],
       ['Verter leche en el tazón', 'Comer los crujientes cereales']);
-    let itemSupermercado11 = new ItemSupermercado2('Atún claro en conserva', 3.95, 357, 'Hacendado',
-      new Date(2025,8,9), ['Atún claro', 'Aceite de oliva', 'Sal'],
+    let itemSupermercado11 = new ItemSupermercado2('Atún claro en conserva', 3.95, 357, 'Carrefour',
+      new Date(2025, 8, 9), ['Atún claro', 'Aceite de oliva', 'Sal'],
       ['Verter y usar al gusto', 'Se aconseja consumir el contenido de la lata en su totalidad']);
     let itemSupermercado12 = new ItemSupermercado2('Bombones rellenos', 2.80, 570, 'Alcampo',
-      new Date(2022,8,18), ['Azucar', 'Cacao', 'Licor', 'Aceite refinado'],
+      new Date(2022, 8, 18), ['Azucar', 'Cacao', 'Licor', 'Aceite refinado'],
       []);
+    let listaCompra6 = new ListaCompra3([itemSupermercado10, itemSupermercado11, itemSupermercado12]);
 
-    console.log('Segunda ampliación ItemSupermercado');
-    console.log(itemSupermercado10);
-    console.log('------------ para borrar despues de implementar el metodo en la clase de supermercado --------------');
-    console.log(itemSupermercado10.contineHierro());
-    console.log(itemSupermercado11.contineHierro());
-    console.log(itemSupermercado10.comprobacionMarca());
-    console.log(itemSupermercado12);
-    console.log(itemSupermercado12.instruccionesDeUso);
-    itemSupermercado10.contieneInstrucciones();
-    itemSupermercado12.contieneInstrucciones();
-    console.log('fecha caducidad, caducado: true');
-    console.log(itemSupermercado12.comprobacionFechaCaducidad());
-    console.log(itemSupermercado10.comprobacionFechaCaducidad());
+    console.log('ejercicios clases marcas');
 
+    let listaCompraAlcampo = new ListaCompraAlcampo();
+    listaCompraAlcampo.procesaLista(listaCompra6);
 
+    let listaCompraCarrefour = new ListaCompraCarrefour();
+    listaCompraCarrefour.procesaLista(listaCompra6);
+
+    let listaCompraHacendado = new ListaCompraHacendado();
+    listaCompraHacendado.procesaLista(listaCompra6);
 
   }
 }
