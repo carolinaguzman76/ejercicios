@@ -353,5 +353,9 @@ export class AppComponent {
     let listaCompraHacendado = new ListaCompraHacendado();
     listaCompraHacendado.procesaLista(listaCompra6);
 
+    let listaCompraHacendadoConMap = new ListaCompraCarrefour();
+    console.log('map en lugar de for');
+    console.log(listaCompraCarrefour.procesaLista2(listaCompra6));
+
   }
 }
