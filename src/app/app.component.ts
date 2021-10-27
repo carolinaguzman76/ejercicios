@@ -341,6 +341,7 @@ export class AppComponent {
       new Date(2022, 8, 18), ['Azucar', 'Cacao', 'Licor', 'Aceite refinado'],
       []);
     let listaCompra6 = new ListaCompra3([itemSupermercado10, itemSupermercado11, itemSupermercado12]);
+    let listaCompra7 = new ListaCompra3([itemSupermercado12, itemSupermercado11])
 
     console.log('ejercicios clases marcas');
 
@@ -353,9 +354,9 @@ export class AppComponent {
     let listaCompraHacendado = new ListaCompraHacendado();
     listaCompraHacendado.procesaLista(listaCompra6);
 
-    let listaCompraHacendadoConMap = new ListaCompraCarrefour();
+    let listaCompraCarrefourConMap = new ListaCompraCarrefour();
     console.log('map en lugar de for');
-    console.log(listaCompraCarrefour.procesaLista2(listaCompra6));
+    console.log(listaCompraCarrefourConMap.procesaLista2(listaCompra7));
 
   }
 }

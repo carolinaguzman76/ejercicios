@@ -9,8 +9,6 @@
 // si.  un ItemDeSupermercado contiene el ingrediente 'hierro' entonces aplicamos un sobre coste a ese item del 2%
 
 import {ListaCompra3} from "./listaCompra3";
-import {ItemSupermercado} from "./itemSupermercado";
-import {ItemSupermercado2} from "./itemSupermercado2";
 
 export class ListaCompraCarrefour {
 
@@ -34,24 +32,14 @@ export class ListaCompraCarrefour {
   }
 
   procesaLista2(listaCompra: ListaCompra3): number[] {
-    return listaCompra.compra.filter(items => {
-      return items.marca === 'Carrefour';
-    }).map(itemsMarca => {
-      return itemsMarca.precio = itemsMarca.precio - itemsMarca.precio * (5 / 100)
+    return listaCompra.compra.map(itemsMarca => {
+      let nuevoPrecio = 0;
+      if (itemsMarca.marca === 'Carrefour') {
+        nuevoPrecio = itemsMarca.precio - itemsMarca.precio * (5 / 100)
+      }
+      return nuevoPrecio;
     })
   }
 
- /* aplicaSobreCosteAItemsQueEngordan(sobreCoste: number): ItemSupermercado[] {
-
-    return this.compra.filter(items => {
-      return items.calorias > 300;
-    }).map(itemsCopia => {
-      let itemNuevo = new ItemSupermercado(itemsCopia.nombre, 0, itemsCopia.calorias);
-
-      itemNuevo.precio = itemsCopia.precio + itemsCopia.precio * (sobreCoste / 100);
-
-      return itemNuevo;
-    });
-  }*/
 
 }
