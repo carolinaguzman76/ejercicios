@@ -27,7 +27,6 @@ export class ListaCompraCarrefour {
       if (listaCompra.compra[i].contineHierro()) {
         listaCompra.compra[i].precio = listaCompra.compra[i].precio + listaCompra.compra[i].precio * (2 / 100);
       }
-
     }
   }
 
@@ -37,6 +36,8 @@ export class ListaCompraCarrefour {
       let precioActualizado = itemsMarca.precio;
       if (itemsMarca.marca === 'Carrefour') {
         precioActualizado = precioActualizado - precioActualizado * (5 / 100);
+      } if (itemsMarca.contineHierro()) {
+        precioActualizado = precioActualizado + precioActualizado * (2 / 100);
       }
       return precioActualizado;
     })

@@ -335,7 +335,7 @@ export class AppComponent {
       new Date(2021, 8, 25), ['Cereales 42%', 'Leche Desnatada en polvo 2%', 'B12', 'Hierro'],
       ['Verter leche en el tazón', 'Comer los crujientes cereales']);
     let itemSupermercado11 = new ItemSupermercado2('Atún claro en conserva', 3.95, 357, 'Carrefour',
-      new Date(2025, 8, 9), ['Atún claro', 'Aceite de oliva', 'Sal'],
+      new Date(2025, 8, 9), ['Atún claro', 'Aceite de oliva', 'Sal', 'Hierro'],
       ['Verter y usar al gusto', 'Se aconseja consumir el contenido de la lata en su totalidad']);
     let itemSupermercado12 = new ItemSupermercado2('Bombones rellenos', 2.80, 570, 'Alcampo',
       new Date(2022, 8, 18), ['Azucar', 'Cacao', 'Licor', 'Aceite refinado'],
