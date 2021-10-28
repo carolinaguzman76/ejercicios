@@ -33,11 +33,13 @@ export class ListaCompraCarrefour {
 
   procesaLista2(listaCompra: ListaCompra3): number[] {
     return listaCompra.compra.map(itemsMarca => {
-      let nuevoPrecio = 0;
+      let totalLista = 0;
+      let precioActualizado = itemsMarca.precio;
       if (itemsMarca.marca === 'Carrefour') {
-        nuevoPrecio = itemsMarca.precio - itemsMarca.precio * (5 / 100)
+        precioActualizado = precioActualizado - precioActualizado * (5 / 100);
+        totalLista = totalLista + precioActualizado;
       }
-      return nuevoPrecio;
+      return totalLista;
     })
   }
 
