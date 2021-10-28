@@ -31,16 +31,19 @@ export class ListaCompraCarrefour {
     }
   }
 
-  procesaLista2(listaCompra: ListaCompra3): number[] {
-    return listaCompra.compra.map(itemsMarca => {
-      let totalLista = 0;
+  procesaLista2(listaCompra: ListaCompra3): number {
+    let totalLista = 0;
+    let listaModificada = listaCompra.compra.map(itemsMarca => {
       let precioActualizado = itemsMarca.precio;
       if (itemsMarca.marca === 'Carrefour') {
         precioActualizado = precioActualizado - precioActualizado * (5 / 100);
-        totalLista = totalLista + precioActualizado;
       }
-      return totalLista;
+      return precioActualizado;
     })
+    for (let i = 0; i < listaModificada.length; i++ ) {
+      totalLista = totalLista + listaModificada[i];
+    }
+    return totalLista;
   }
 
 
