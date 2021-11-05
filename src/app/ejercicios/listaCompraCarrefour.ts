@@ -9,6 +9,7 @@
 // si.  un ItemDeSupermercado contiene el ingrediente 'hierro' entonces aplicamos un sobre coste a ese item del 2%
 
 import {ListaCompra3} from "./listaCompra3";
+import {NombreSupermercado} from "./itemSupermercado2";
 
 export class ListaCompraCarrefour {
 
@@ -34,7 +35,7 @@ export class ListaCompraCarrefour {
     let totalLista = 0;
     let listaModificada = listaCompra.compra.map(itemsMarca => {
       let precioActualizado = itemsMarca.precio;
-      if (itemsMarca.marca === 'Carrefour') {
+      if (itemsMarca.marca === NombreSupermercado.Carrefour) {
         precioActualizado = precioActualizado - precioActualizado * (5 / 100);
       } if (itemsMarca.contineHierro()) {
         precioActualizado = precioActualizado + precioActualizado * (2 / 100);
@@ -46,6 +47,13 @@ export class ListaCompraCarrefour {
     }
     return totalLista;
   }
+
+
+
+   //	MostrarDatosPeso(linea: LineaComanda) {
+  // 		return linea.objArticulo.tipoVenta === TipoVentaArticulo.PESO;
+  // 	}
+
 
 
 }

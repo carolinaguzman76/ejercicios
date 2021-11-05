@@ -140,15 +140,21 @@ export class ItemSupermercado2 {
 
     if (diferenciaEntreFechas < 7) {
       return 'caducado';
-    } if (diferenciaEntreFechas >= 7 && diferenciaEntreFechas < 8 ) {
+    }
+    if (diferenciaEntreFechas >= 7 && diferenciaEntreFechas < 8) {
       return 'proxima caducidad';
     } else {
       return 'sin caducar';
     }
 
-
   }
 
 
-
 }
+
+export enum NombreSupermercado {
+  Carrefour = 'C',
+  Alcampo = 'A',
+  Hacendado = 'H'
+}
+
